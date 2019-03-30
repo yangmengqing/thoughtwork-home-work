@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Deploy to Production Environment') {
             steps {
-                sh 'docker build -t mengqingyang/tomcat .'
+                sh 'cd /var/jenkins_home/workspace/Java-Web-Project && docker build -t mengqingyang/tomcat .'
                 sh 'docker run mengqingyang/tomcat -p 80:8080'
             }
         }
