@@ -1,15 +1,9 @@
 pipeline {
-    agent {
-        node {
-            label 'master'
-            customWorkspace '/var/jenkins_home/workspace/Java-Web-Project'
-         }
-    }
+    agent any
     stages {
         stage('Build') {
             steps {
-                sh 'pwd'
-                sh 'build.sh'
+                sh 'cd /var/jenkins_home/workspace/Java-Web-Project && ./build.sh'
             }
         }
         stage('Test') {
