@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'test.sh'
+                sh 'cd /var/jenkins_home/workspace/Java-Web-Project && ./test.sh'
             }
         }
         stage('Deploy to Production Environment') {
